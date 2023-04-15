@@ -96,3 +96,10 @@ h3{
     bottom: 0;
   }
 }
+
+footer a {
+  text-decoration: none;
+}
+.footer-social {
+  font-size: 30px;
+}
