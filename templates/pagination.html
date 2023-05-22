@@ -1,0 +1,64 @@
+{% if journals.has_other_pages %}
+
+
+<!-- ***** Displays Previous***** -->
+    {% if journals.has_previous %}
+        <a  href="?page={{ journals.previous_page_number }}">&laquo; </a>
+    {% else %}
+        <a class="w3-gray text-dark">&laquo; </a>
+    {% endif %}
+<!-- ***** Displays Previous ***** -->
+
+
+<!-- ***** Displays first character ***** -->
+    {% if journals.number == 1 %}
+       <a  class="w3-amber text-light">{{ journals.number }}</a>
+    {% else %}
+     <a href='?page={{ 1 }}'>{{ 1 }}</a>
+    {% endif %}
+<!-- ***** Displays first character ends ***** -->
+
+
+<!-- ***** Displays if paging already greater than 2 ***** -->
+    {% if journals.number > 2 %}
+      <a  class="w3-deep-orange text-light">..</a>
+    {% endif %}
+<!-- ***** Displays if paging already greater than 2 ***** -->
+
+
+<!-- ***** Displays each page ***** -->
+    {% for page_num in journals.paginator.page_range %}
+    {% if journals.number == page_num and journals.number != journals.paginator.num_pages and  journals.number != 1%}
+      <a  class="w3-amber text-light">{{ page_num }}</a>
+    {% endif %}
+    {% endfor %}
+<!-- ***** Displays each page ***** -->
+
+
+<!-- ***** Displays if paging already close to the last one ***** -->
+    {% if journals.number < journals.paginator.num_pages|add:"-1" %}
+       <a  class="w3-aqua w3-text-dark">..</a>
+    {% endif %}
+<!-- ***** Displays if paging already close to the last one ***** -->
+
+
+<!-- ***** Displays the last number ***** -->
+    {% if journals.number == journals.paginator.num_pages %}
+       <a  class="w3-amber text-light">{{ journals.number }}</a>
+    {% else %}
+        <a href='?page={{ journals.paginator.num_pages }}'>{{ journals.paginator.num_pages }}</a>
+    {% endif %}
+<!-- ***** Displays the last number ***** -->
+
+
+<!-- ***** Displays Next ***** -->
+    {% if journals.has_next %}
+        <a  href="?page={{ journals.next_page_number }}">&raquo; </a>
+    {% else %}
+        <a  class="w3-gray text-light btn-disabled">&raquo; </a>
+    {% endif %}
+<!-- ***** Displays Next ***** -->
+
+
+
+{% endif %}

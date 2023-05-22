@@ -1,56 +1,44 @@
     
-<!DOCTYPE html>
-<html>
-<head>
-<title>Titlayo</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="./img/titilayo.jpg" rel="icon">
-<link href="./img/titilayo.jpg" rel="apple-touch-icon">
-<link rel="stylesheet"  href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-</style>
-</head>
-<body class="w3-light-grey">
-  <nav class="w3-bar w3-teal">
-  <a href="./index.html" class="w3-bar-item w3-button w3-hide-small">
+{% extends 'base.html' %}
+{% load static %}
+
+{% block nav %}
+  <a href="{% url 'index' %}" class="w3-bar-item w3-button w3-hide-small">
     <i class="fa fa-user"></i> About</a>
-  <a href="./books.html" class="w3-bar-item w3-button w3-hide-small" >
+  <a href="{% url 'books' %}" class="w3-bar-item w3-button w3-hide-small" >
     <i class="fa fa-book"></i> Books</a>
-  <a href="./journal.html" class="w3-bar-item w3-button  w3-hide-small" >
+  <a href="{% url 'journal' %}" class="w3-bar-item w3-button  w3-hide-small" >
     <i class="fa fa-pencil-square"></i> Open journal</a>
-    <a href="./establishment.html" class="w3-bar-item w3-button w3-hide-small">
+    <a href="{% url 'establishment' %}" class="w3-bar-item w3-button w3-hide-small">
     <i class="fa fa-briefcase"></i> My establishment</a>
-<a href="./se.html" class="w3-bar-item w3-button w3-hide-small">
+<a href="{% url 'se' %}" class="w3-bar-item w3-button w3-hide-small">
     <i class="fa fa-file-sound-o"></i> Speaking engagement</a>
 
 <div class="w3-dropdown-hover w3-hide-large w3-hide-medium">
     <button class="w3-button"><i class="fa fa-bars"> </i> Menu</button>
     <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-sm w3-text-teal">
-      <a href="./index.html" class="w3-bar-item w3-button ">
+      <a href="{% url 'index' %}" class="w3-bar-item w3-button ">
         <i class="fa fa-user"></i> About</a>
-        <a href="./books.html" class="w3-bar-item w3-button">
+        <a href="{% url 'books' %}" class="w3-bar-item w3-button">
         <i class="fa fa-book"></i> Books</a>
-      <a href="./journal.html" class="w3-bar-item w3-button">
+      <a href="{% url 'journal' %}" class="w3-bar-item w3-button">
         <i class="fa fa-pencil-square"></i> Open journal</a>
-      <a href="./establishment.html" class="w3-bar-item w3-button">
+      <a href="{% url 'establishment' %}" class="w3-bar-item w3-button">
         <i class="fa fa-briefcase"></i> My establishment</a>
-      <a href="./se.html" class="w3-bar-item w3-button">
+      <a href="{% url 'se' %}" class="w3-bar-item w3-button">
         <i class="fa fa-file-sound-o"></i> Speaking engagement</a>
     </div>
   </div>
 
   <div class="w3-right">
-    <a href="./testimonial.html" class="w3-bar-item w3-button w3-white "style="color: #009688!important;">
+    <a href="{% url 'testimonial' %}" class="w3-bar-item w3-button w3-white "style="color: #009688!important;">
         <i class="fa fa-sticky-note"></i> Testimonial</a>
-    <a href="./donate.html" class="w3-bar-item w3-button " style="font-size: 93%;">
+    <a href="{% url 'donate' %}" class="w3-bar-item w3-button " style="font-size: 93%;">
         <i class="fa fa-handshake-o"></i> Donate</a>
 </div>
-</nav>
+{% endblock %}
+
+{% block content %}
 <div class="w3-container">
 
 
@@ -79,7 +67,7 @@ Wanted More.” It teaches me to be content; my mummy said, it is being satisfie
 have, without envying others. I also learnt not to be grumpy, as it will drive away all my 
 friends. I want all my friends to read it too, thank you Aunty Titilayo.                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="./img/testimonial1.jpeg" class="testimonial-img" alt="">
+                <img src="{% static '/img/testimonial1.jpeg' %}" class="testimonial-img" alt="">
                 <h3>Sonma Uwadinma </h3>
               </div>
             </div><!-- End testimonial item -->
@@ -115,7 +103,7 @@ it more interactive and introspective. There is so much to learn from this book:
 Thank you, Dr for baring it all! 
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="./img/testimonial2.jpeg" class="testimonial-img" alt="">
+                <img src="{% static '/img/testimonial2.jpeg' %}" class="testimonial-img" alt="">
                 <h3> Ada Uwadinma</h3>
               </div>
             </div><!-- End testimonial item -->
@@ -131,27 +119,15 @@ Thank you, Dr for baring it all!
     <div class="w3-white w3-center">
       <hr>
     <video width="320" height="240" controls>
-  <source src="vid/Video 1.mp4" type="video/mp4">
+  <source src="{% static 'vid/Video 1.mp4' %}" type="video/mp4">
 </video><hr>
     <video width="320" height="240" controls>
-  <source src="vid/Video 2.mp4" type="video/mp4">
+  <source src="{% static 'vid/Video 2.mp4' %}" type="video/mp4">
 </video><hr>
     <video width="320" height="240" controls>
-  <source src="vid/Video 3.mp4" type="video/mp4">
+  <source src="{% static 'vid/Video 3.mp4' %}" type="video/mp4">
 </video><hr>
 </div>
     </div>
 
-<footer class="w3-container w3-teal w3-center w3-margin-top w3-center">
-  <div class="footer-social">
-      <a class="fa fa-instagram fa-fw" href="https://instagram.com/dr_roottschildcare?igshid=YmMyMTA2M2Y="></a>
-      <a class="fa fa-facebook-square fa-fw" href="https://www.facebook.com/profile.php?id=100070850647480&mibextid=ZbWKwL"></a>
-      <a class="fa fa-whatsapp fa-fw" href="https://wa.me/2349024057678"></a>
-      <a class="fa fa-envelope fa-fw" href="mailto:info@drtitilayoalabi.com"></a>
-  </div>
-  <p>All rights reserved <br> copyright© 2023</p>
-  
-</footer>
-
-</body>
-</html>
+{% endblock %}

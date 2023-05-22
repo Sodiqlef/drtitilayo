@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Titlayo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{% static '/img/titilayo.jpg' %}" rel="icon">
+<link href="{% static '/img/titilayo.jpg' %}" rel="apple-touch-icon">
+<link rel="stylesheet"  href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="{% static '/css/style.css' %}?{% now 'u' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+  <nav class="w3-bar w3-teal">
+    {% block nav %}
+
+{% endblock %}
+</nav>
+{% block content %}
+{% endblock %}
+
+<script src="{% static '/js/slide-animation.js' %}"></script>
+<script src="{% static '/js/whatsapp.js' %}"></script>
+<footer class="w3-container w3-teal w3-center w3-margin-top w3-center">
+  <div class="footer-social">
+      <a class="fa fa-instagram fa-fw" href="https://instagram.com/dr_roottschildcare?igshid=YmMyMTA2M2Y="></a>
+      <a class="fa fa-facebook-square fa-fw" href="https://www.facebook.com/profile.php?id=100070850647480&mibextid=ZbWKwL"></a>
+      <a class="fa fa-whatsapp fa-fw" href="https://wa.me/2349024057678"></a>
+      <a class="fa fa-envelope fa-fw" href="mailto:info@drtitilayoalabi.com"></a>
+  </div>
+  <p>All rights reserved <br> copyright© 2023</p>
+  
+</footer>
+</body>
+</html>

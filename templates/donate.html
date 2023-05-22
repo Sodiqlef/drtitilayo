@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+{% block nav %}
+    <nav class="w3-bar w3-teal">
+  <a href="{% url 'index' %}" class="w3-bar-item w3-button w3-hide-small">
+    <i class="fa fa-user"></i> About</a>
+  <a href="{% url 'books' %}" class="w3-bar-item w3-button w3-hide-small">
+    <i class="fa fa-book"></i> Books</a>
+  <a href="{% url 'journal' %}" class="w3-bar-item w3-button w3-hide-small" >
+    <i class="fa fa-pencil-square"></i> Open journal</a>
+    <a href="{% url 'establishment' %}" class=" w3-bar-item w3-button  w3-hide-small" >
+    <i class="fa fa-briefcase"></i> My Establishment </a>
+    <a href="{% url 'se' %}" class="w3-bar-item w3-button  w3-hide-small"  >
+    <i class="fa fa-file-sound-o"></i> Speaking Engagement</a>
+
+<div class="w3-dropdown-hover w3-hide-large w3-hide-medium">
+    <button style="font-size: 90%;" class="w3-button"><i class="fa fa-bars"> </i> Menu</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-sm w3-text-teal">
+      <a href="{% url 'index' %}" class="w3-bar-item w3-button">
+        <i class="fa fa-user"></i> About</a>
+        <a href="{% url 'books' %}" class="w3-bar-item w3-button">
+        <i class="fa fa-book"></i> Books</a>
+      <a href="{% url 'journal' %}" class="w3-bar-item w3-button">
+        <i class="fa fa-pencil-square"></i> Open journal</a>
+      <a href="{% url 'establishment' %}" class="w3-bar-item w3-button">
+        <i class="fa fa-briefcase"></i> My Establishment</a>
+        <a href="{% url 'se' %}" class="w3-bar-item w3-button">
+        <i class="fa fa-file-sound-o"></i>Speaking Engagement</a>
+    </div>
+  </div>
+
+    <div class="w3-right">
+      <a href="{% url 'testimonial' %}" style="font-size: 89%;" class="w3-bar-item w3-button ">
+        <i class="fa fa-sticky-note"></i> Testimonial</a>
+        <a href="{% url 'donate' %}" class="w3-bar-item w3-button w3-white" style="color: #009688!important;">
+        <i class="fa fa-handshake-o"></i> Donate</a>
+</div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="w3-content w3-margin-top w3-card-4" style="max-width:1400px;">
+    <div class="w3-row-padding  w3-light-grey">
+        
+         <div  class="w3-container w3-white "><br>
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-handshake-o fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Donate!</h2>
+Together let's gift a woman a book!<br><br>
+In 2021, God laid a burden in my heart to write a book for "waiting mothers." He desires that they learn to truly LIVE and thrive regardless of what they may be experiencing. I want to give at least 1000 women a copy of the book as this will significantly impact their lives and change their outlook toward their situation and I need your help to do this.
+A copy is 1400 naira (4 dollars) at the cost price <br><br>
+<ul>
+    Distribution Plan: 
+    <li>To individuals on request</li>
+    <li>Through Ministries that reach out to waiting mothers.</li>
+    <li>Through Specialist Clinics.</li>
+</ul>
+ 
+ 
+ Contact: <a href="mailto:info@drtitilayoalabi.com" class="w3-text-teal">info@drtitilayoalabi.com </a><br><br>
+Your Donation is highly appreciated.<br><br>
+Thank you! <br><hr>
+
+            </div>
+            </div>
+            </div>
+
+{% endblock %}
